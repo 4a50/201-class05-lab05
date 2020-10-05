@@ -105,11 +105,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) { //eslint-disable-line
   var multNumStuff = multiply(multArr[0], multArr[1], multArr[2])[0];
   var string1 = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + multNumStuff + '.';
-
   return [multNumStuff, string1];
-
-
-
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -148,22 +144,19 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   var stringCount = '';
 
   for (var i = 0; i < dynamicArray.length; i++) {
-    // console.log(i);    
-    console.log(dynamicArray[i]);
-    if (i === 0) {
-      stringCount += dynamicArray[i];
-    }
-    else {
-      stringCount += ',' + dynamicArray[i];
-    }
-    multNumbers = multiply(dynamicArray[i], multNumbers)[0];
 
+    // if (i === 0) {
+    //   stringCount += dynamicArray[i];
+    // }
+    // else {
+    //   stringCount += ',' + dynamicArray[i];
+    // }
+
+    multNumbers = multiply(dynamicArray[i], multNumbers)[0];
   }
 
-  var outString = 'The numbers ' + stringCount + ' have a product of ' + multNumbers + '.';
-
-  console.log('MultNumbers: ' + multNumbers);
-  console.log('outString:' + outString);
+  // var outString = 'The numbers ' + stringCount + ' have a product of ' + multNumbers + '.';
+  var outString = `The numbers ${dynamicArray} have a product of ${multNumbers}.`;
 
   return [multNumbers, outString]
 }
